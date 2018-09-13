@@ -20,6 +20,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -32,14 +33,15 @@ public class MainActivity extends AppCompatActivity {
         // Set the content of the activity to use the activity_main.xml layout file
         setContentView(R.layout.activity_main);
 
-        numbers = (TextView) findViewById(R.id.numbers);
-        family = (TextView) findViewById(R.id.family);
-        colors = (TextView) findViewById(R.id.colors);
-        phrases = (TextView) findViewById(R.id.phrases);
+        numbers =  findViewById(R.id.numbers);
+        family =  findViewById(R.id.family);
+        colors =  findViewById(R.id.colors);
+        phrases = findViewById(R.id.phrases);
 
         numbers.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Toast.makeText(MainActivity.this,"Numbers",Toast.LENGTH_SHORT).show();
                 Intent i = new Intent(MainActivity.this, NumbersActivity.class);
                 startActivity(i);
             }
@@ -48,6 +50,7 @@ public class MainActivity extends AppCompatActivity {
         family.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Toast.makeText(MainActivity.this,"Family",Toast.LENGTH_SHORT).show();
                 Intent i = new Intent(MainActivity.this, FamilyActivity.class);
                 startActivity(i);
             }
@@ -56,6 +59,7 @@ public class MainActivity extends AppCompatActivity {
         colors.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Toast.makeText(MainActivity.this,"Colors",Toast.LENGTH_SHORT).show();
                 Intent i = new Intent(MainActivity.this, ColorsActivity.class);
                 startActivity(i);
             }
@@ -64,6 +68,7 @@ public class MainActivity extends AppCompatActivity {
         phrases.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Toast.makeText(MainActivity.this,"Phrases",Toast.LENGTH_SHORT).show();
                 Intent i = new Intent(MainActivity.this, PhrasesActivity.class);
                 startActivity(i);
             }
