@@ -11,8 +11,7 @@
     <ImageView
         android:id="@+id/definitionImage"
         android:layout_width="@dimen/list_item_height"
-        android:layout_height="@dimen/list_item_height"
-        android:src="@mipmap/ic_launcher" />
+        android:layout_height="@dimen/list_item_height" />
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -39,7 +38,6 @@
         android:id="@+id/playBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="20dp"
-        android:src="@mipmap/ic_launcher"
+        android:layout_margin="25dp"
         app:srcCompat="@android:drawable/ic_media_play" />
 </LinearLayout>

@@ -13,13 +13,13 @@ import java.util.ArrayList;
 
 /**
  * Created by termi on 3/5/2018.
-*/
+ */
 
 /**
  * {@link WordAdapter} is an {@link ArrayAdapter} that can provide the layout for each list item
  * based on a data source, which is a list of {@link Word} objects.
  */
-public class WordAdapter extends ArrayAdapter<Word>  {
+public class WordAdapter extends ArrayAdapter<Word> {
 
     /**
      * Create a new {@link WordAdapter} object.
@@ -44,21 +44,25 @@ public class WordAdapter extends ArrayAdapter<Word>  {
         Word currentWord = getItem(position);
 
         // Find the TextView in the list_item.xml layout with the ID miwok_text_view.
-        TextView miwokTextView = (TextView) listItemView.findViewById(R.id.miwokMeaning);
+        TextView miwokTextView = listItemView.findViewById(R.id.miwokMeaning);
         // Get the Miwok translation from the currentWord object and set this text on
         // the Miwok TextView.
         miwokTextView.setText(currentWord.getMiwokTranslation());
 
         // Find the TextView in the list_item.xml layout with the ID default_text_view.
-        TextView defaultTextView = (TextView) listItemView.findViewById(R.id.englishMeaning);
+        TextView defaultTextView = listItemView.findViewById(R.id.englishMeaning);
         // Get the default translation from the currentWord object and set this text on
         // the default TextView.
         defaultTextView.setText(currentWord.getDefaultTranslation());
 
         // Find the ImageView in the list_item.xml layout with the ID image.
-        ImageView imageView = (ImageView) listItemView.findViewById(R.id.definitionImage);
+        ImageView imageView = listItemView.findViewById(R.id.definitionImage);
         // Set the ImageView to the image resource specified in the current Word
-        imageView.setImageResource(currentWord.getImageResource());
+        if (currentWord.hasImage()) {
+            imageView.setImageResource(currentWord.getImageResource());
+        } else {
+            imageView.setVisibility(View.GONE);
+        }
 
         // Return the whole list item layout (containing 2 TextViews) so that it can be shown in
         // the ListView.
